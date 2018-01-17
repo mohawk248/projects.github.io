@@ -8,6 +8,11 @@
                 .colors {
                     text-align: center;
                 }
+				.WhiteColor{
+                    font-size:20;
+                    width: 200px;
+                    background-color: White;
+                }
                 .BlueColor {
                     font-size:20;
                     width: 200px;
@@ -30,6 +35,8 @@
             
             <div class="colors">
                 <h3>Click on the color you want to use</h3>
+				<input type="button" onclick="WhiteColor()" value="White" class="WhiteColor">
+				<br/>
                 <input type="button" onclick="BlueColor()" value="Blue" class="BlueColor">
                 <br/>
                 <input type="button" onclick="GreenColor()" value="Green" class="GreenColor">
@@ -47,6 +54,9 @@
             </table>
             <script>
                 var drawcolor = "white";
+				function WhiteColor() {
+                    drawcolor = "white";
+                }
                 function BlueColor() {
                     drawcolor = "blue";
                 }
