@@ -83,50 +83,58 @@
                         <input type="button" onclick="TwoE()" id="TwoE" class="r">
                     </th>
                 </tr>
+                <!--Third row in drawing grid-->
+                <tr>
+                    <th>
+                        <input type="button" onclick="ThreeA()" id="ThreeA" class="r">
+                    </th>
+                    <th>
+                        <input type="button" onclick="ThreeB()" id="ThreeB" class="r">
+                    </th>
+                    <th>
+                        <input type="button" onclick="ThreeC()" id="ThreeC" class="r">
+                    </th>
+                    <th>
+                        <input type="button" onclick="ThreeD()" id="ThreeD" class="r">
+                    </th>
+                    <th>
+                        <input type="button" onclick="ThreeE()" id="ThreeE" class="r">
+                    </th>
+                </tr>
             </table>
             <script>
                 var drawcolor = "white";
                 //Colors you can pick//
-                function WhiteColor() {
-                    drawcolor = "white";
-                }
-                function BlueColor() {
-                    drawcolor = "blue";
-                }
-                function GreenColor() {
-                    drawcolor = "green";
-                }
-                //first Row of drawing Grid//
-                    function OneA() {
-                        document.getElementById("OneA").style.backgroundColor = drawcolor;
-                    }
-                    function OneB() {
-                        document.getElementById("OneB").style.backgroundColor = drawcolor;
-                    }
-                    function OneC() {
-                        document.getElementById("OneC").style.backgroundColor = drawcolor;
-                    }
-                    function OneD() {
-                        document.getElementById("OneD").style.backgroundColor = drawcolor;
-                    }
-                    function OneE() {
-                        document.getElementById("OneE").style.backgroundColor = drawcolor;
-                    }
+                    function WhiteColor() { drawcolor = "white"; }
+                    function BlueColor() { drawcolor = "blue"; }
+                    function GreenColor() { drawcolor = "green"; }
+                //first Row of Drawing Grid//
+                    function OneA() { document.getElementById("OneA").style.backgroundColor = drawcolor; }
+                    function OneB() { document.getElementById("OneB").style.backgroundColor = drawcolor; }
+                    function OneC() { document.getElementById("OneC").style.backgroundColor = drawcolor; }
+                    function OneD() { document.getElementById("OneD").style.backgroundColor = drawcolor; }
+                    function OneE() { document.getElementById("OneE").style.backgroundColor = drawcolor; }
                 //Second Row of drawing Grid//
-                    function TwoA() {
-                        document.getElementById("TwoA").style.backgroundColor = drawcolor;
+                    function TwoA() { document.getElementById("TwoA").style.backgroundColor = drawcolor; }
+                    function TwoB() { document.getElementById("TwoB").style.backgroundColor = drawcolor; }
+                    function TwoC() { document.getElementById("TwoC").style.backgroundColor = drawcolor; }
+                    function TwoD() { document.getElementById("TwoD").style.backgroundColor = drawcolor; }
+                    function TwoE() { document.getElementById("TwoE").style.backgroundColor = drawcolor; }
+                //Third Row of Drawing Grid//
+                    function ThreeA() {
+                        document.getElementById("ThreeA").style.backgroundColor = drawcolor;
                     }
-                    function TwoB() {
-                        document.getElementById("TwoB").style.backgroundColor = drawcolor;
+                    function ThreeB() {
+                        document.getElementById("ThreeB").style.backgroundColor = drawcolor;
                     }
-                    function TwoC() {
-                        document.getElementById("TwoC").style.backgroundColor = drawcolor;
+                    function ThreeC() {
+                        document.getElementById("ThreeC").style.backgroundColor = drawcolor;
                     }
-                    function TwoD() {
-                        document.getElementById("TwoD").style.backgroundColor = drawcolor;
+                    function ThreeD() {
+                        document.getElementById("ThreeD").style.backgroundColor = drawcolor;
                     }
-                    function TwoE() {
-                        document.getElementById("TwoE").style.backgroundColor = drawcolor;
+                    function ThreeE() {
+                        document.getElementById("ThreeE").style.backgroundColor = drawcolor;
                     }
             </script>
         </body>
