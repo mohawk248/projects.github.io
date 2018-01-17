@@ -1,61 +1,55 @@
 <html>
-    <head>
-        <style>
-            table {
-                margin-right: auto;
-                margin-left: auto;
-            }
-            table, th, td {
-                border-collapse: collapse;
-                border: 1px solid black;
-                font-size:40;
-                width: 50px;
-                height: 50px;
-            }
-            table, td {
-                empty-cells: hide;
-            }
-            input[type="button"] {
-                font-size:40;
-                Width: 50;
-                height: 50;
-                background-color: white;
-            }
-        </style>
-    </head>
-    <body>
-        <input type="text" id="colorpicker">
-        <p id="color"></p>
-        <table>
-            <tr>
-                <th>
-                    <input type="button" onclick="OneA()" id="OneA">
-                </th>
-                <th>
-                    <input type="button" onclick="OneB()" id="OneB">
-                </th>
-                <th>
-                    <input type="button" onclick="OneC()" id="OneC">
-                </th>
-                <th>
-                    <input type="button" onclick="OneD()" id="OneD">
-                </th>
-                <th>
-                    <input type="button" onclick="OneE()" id="OneE">
-                </th>
-            </tr>
-        </table>
-        <script>
-            function OneA() {
-                switch (document.getElementById("colorpicker").value) {
-                    case "red":
-                        document.getElementById("OneA").style.backgroundColor = "red";
-                    break;
-                    case "Red":
-                        document.getElementById("OneA").style.backgroundColor = "red";
-                    break;
+        <head>
+            <style>
+                .colors {
+                    text-align: center;
                 }
-            }
-        </script>
-    </body>
-</html>
+                .BlueColor {
+                    font-size:20;
+                    width: 200px;
+                    background-color: blue;
+                }
+                .GreenColor {
+                    font-size:20;
+                    width: 200px;
+                    background-color: green;
+                }
+                .r {
+                    width: 50px;
+                    height: 50px;
+                }
+            </style>
+        </head>
+        <body>
+            
+            <div class="colors">
+                <h3>Click on the color you want to use</h3>
+                <input type="button" onclick="BlueColor()" value="Blue" class="BlueColor">
+                <br/>
+                <input type="button" onclick="GreenColor()" value="Green" class="GreenColor">
+                <br/>
+                <h3>Then click on the box</h3>
+            </div>
+            <p id="color" class="ColorName"></p>
+            <p id="greenthing" class="ColorName"></p>
+            <table>
+                <tr>
+                    <th>
+                        <input type="button" onclick="OneA()" id="OneA" class="r">
+                    </th>
+                </tr>
+            </table>
+            <script>
+                var drawcolor = "white";
+                function BlueColor() {
+                    drawcolor = "blue";
+                }
+                function GreenColor() {
+                    drawcolor = "green";
+                }
+                function OneA() {
+                    document.getElementById("OneA").style.backgroundColor = drawcolor;
+                }
+            </script>
+        </body>
+    </html>
