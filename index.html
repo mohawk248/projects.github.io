@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            table {
+                margin-right: auto;
+                margin-left: auto;
+            }
+            table, th, td {
+                border-collapse: collapse;
+                border: 1px solid black;
+                font-size:40;
+                width: 50px;
+                height: 50px;
+            }
+            table, td {
+                empty-cells: hide;
+            }
+            input[type="button"] {
+                font-size:40;
+                Width: 50;
+                height: 50;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="colorpicker">
+        <p id="color"></p>
+        <table>
+            <tr>
+                <th>
+                    <input type="button" onclick="OneA()" id="OneA">
+                </th>
+                <th>
+                    <input type="button" onclick="OneB()" id="OneB">
+                </th>
+                <th>
+                    <input type="button" onclick="OneC()" id="OneC">
+                </th>
+                <th>
+                    <input type="button" onclick="OneD()" id="OneD">
+                </th>
+                <th>
+                    <input type="button" onclick="OneE()" id="OneE">
+                </th>
+            </tr>
+        </table>
+        <script>
+            function OneA() {
+                switch (document.getElementById("colorpicker").value) {
+                    case "red":
+                        document.getElementById("OneA").style.backgroundColor = "red";
+                    break;
+                    case "Red":
+                        document.getElementById("OneA").style.backgroundColor = "red";
+                    break;
+                }
+            }
+        </script>
+    </body>
+</html>
