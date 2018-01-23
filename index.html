@@ -5,28 +5,10 @@
           margin-left: auto;
           margin-right: auto;
         }
-        .colors {
+        .colors table {
+          margin-left: auto:
+          margin-right: auto;
           text-align: center;
-        }
-        .WhiteColor{
-          font-size:20;
-          width: 200px;
-          background-color: White;
-        }
-        .BlueColor {
-          font-size:20;
-          width: 200px;
-          background-color: blue;
-        }
-        .GreenColor {
-          font-size:20;
-          width: 200px;
-          background-color: green;
-        }
-        .RedColor {
-          font-size:20;
-          width: 200px;
-          background-color: red;
         }
         .r {
           width: 25px;
@@ -39,12 +21,40 @@
     <body>
       <div class="colors">
         <!--Colors you can pick-->
-        <h3>Click on the color you want to use</h3>
-        <input type="button" onclick="WhiteColor()" value="White" class="WhiteColor"><br/>
-        <input type="button" onclick="BlueColor()" value="Blue" class="BlueColor"><br/>
-        <input type="button" onclick="GreenColor()" value="Green" class="GreenColor"><br/>
-        <input type="button" onclick="RedColor()" value="Red" class="RedColor"><br/>
-        <h3>Then click on the box</h3>
+        <table>
+          <tr>
+            <td>
+              <p>
+              Red:
+              <br/>
+              <input type="range" id="red" Class="color-slider" min="0" max="255">
+              </p>
+            </td>
+          </tr>
+        <tr>
+          <td>
+            <p>
+              Green:
+              <br/>
+              <input type="range" id="green" Class="color-slider" min="0" max="255">
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              Blue:
+              <br/>
+              <input type="range" id="blue" Class="color-slider" min="0" max="255">
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" onclick="ColorButton()" id="box" value="Color">
+          </td>
+        </tr>
+      </table>
       </div>
       <table>
         <!--First row in drawing grid-->
@@ -89,12 +99,18 @@
           </tr>
       </table>
       <script>
-        var drawcolor = "white";
+        var r;
+        var g; 
+        var b;
+        var drawcolor;
         //Colors you can pick//
-          function WhiteColor() { drawcolor = "white"; }
-          function BlueColor() { drawcolor = "blue"; }
-          function GreenColor() { drawcolor = "green"; }
-          function RedColor() { drawcolor = "red";}
+          function ColorButton(){
+            r = document.getElementById('red').value;
+            g = document.getElementById('green').value;
+            b = document.getElementById('blue').value;
+            drawcolor = "rgb("+r+","+g+","+b+")";
+            document.getElementById("box").style.backgroundColor = drawcolor;
+          }
         //first Row of Drawing Grid//
           function OneA() { document.getElementById("OneA").style.backgroundColor = drawcolor; }
           function OneB() { document.getElementById("OneB").style.backgroundColor = drawcolor; }
