@@ -5,11 +5,6 @@
           margin-left: auto;
           margin-right: auto;
         }
-        .colors table {
-          margin-left: auto:
-          margin-right: auto;
-          text-align: center;
-        }
         .r {
           width: 25px;
           height: 25px;
@@ -19,43 +14,47 @@
       </style>
     </head>
     <body>
-      <div class="colors">
         <!--Colors you can pick-->
         <table>
           <tr>
-            <td>
+            <th>
               <p>
               Red:
               <br/>
-              <input type="range" id="red" Class="color-slider" min="0" max="255">
+              <span id="RedColor">128</span>
+              <br/>
+              <input type="range" id="red" oninput="colorSlider()" min="0" max="255">
               </p>
-            </td>
+            </th>
           </tr>
         <tr>
-          <td>
+          <th>
             <p>
               Green:
               <br/>
-              <input type="range" id="green" Class="color-slider" min="0" max="255">
+              <span id="GreenColor">128</span>
+              <br/>
+              <input type="range" id="green" oninput="colorSlider()" min="0" max="255">
             </p>
-          </td>
+          </th>
         </tr>
         <tr>
-          <td>
+          <th>
             <p>
               Blue:
               <br/>
-              <input type="range" id="blue" Class="color-slider" min="0" max="255">
+              <span id="BlueColor">128</span>
+              <br/>
+              <input type="range" id="blue" oninput="colorSlider()" min="0" max="255">
             </p>
-          </td>
+          </th>
         </tr>
         <tr>
-          <td>
+          <th>
             <input type="button" onclick="ColorButton()" id="box" value="Color">
-          </td>
+          </th>
         </tr>
       </table>
-      </div>
       <table>
         <!--First row in drawing grid-->
           <tr>
@@ -99,17 +98,28 @@
           </tr>
       </table>
       <script>
-        var r;
-        var g; 
-        var b;
-        var drawcolor;
-        //Colors you can pick//
-          function ColorButton(){
+        var 
+          r = document.getElementById('red').value,
+          g = document.getElementById('green').value,
+          b = document.getElementById('blue').value,
+          red_out = document.getElementById('RedColor'),
+          green_out = document.getElementById('GreenColor'),
+          blue_out = document.getElementById('BlueColor'),
+          colorBox = document.getElementById('box'),
+          color_out = "rgb("+r+","+g+","+b+")",
+          drawcolor = color_out;
+        colorBox.style.backgroundColor = color_out;
+        //Color Sliders//
+          function colorSlider() {
             r = document.getElementById('red').value;
             g = document.getElementById('green').value;
             b = document.getElementById('blue').value;
-            drawcolor = "rgb("+r+","+g+","+b+")";
-            document.getElementById("box").style.backgroundColor = drawcolor;
+            red_out.innerHTML = r;
+            green_out.innerHTML = g;
+            blue_out.innerHTML = b;
+            color_out = "rgb("+r+","+g+","+b+")";
+            colorBox.style.backgroundColor = color_out;
+            drawcolor = color_out;
           }
         //first Row of Drawing Grid//
           function OneA() { document.getElementById("OneA").style.backgroundColor = drawcolor; }
